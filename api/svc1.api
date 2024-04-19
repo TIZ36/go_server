@@ -1,0 +1,36 @@
+syntax = "v1"
+
+type RespTemplate {
+    Code int32 `json:"code"`
+    Msg string `json:"msg"`
+    Data interface{} `json:"data"`
+}
+
+type CommonResp {
+    Code int32 `json:"code"`
+    Msg string `json:"msg"`
+}
+
+
+type (
+    PingReq {
+        Name string `path:"name"`
+    }
+    PingData{
+        Name string `json:"name"`
+    }
+    PingResp {
+        CommonResp
+        Data PingData `json:"data"`
+    }
+)
+
+@server (
+    prefix: /v1/api/svc1
+    group: svc1
+)
+service svc-api {
+    @doc "ping req"
+    @handler PingHandler
+    get /ping/:name (PingReq) returns (PingResp)
+}
