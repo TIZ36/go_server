@@ -1,0 +1,12 @@
+syntax = "v1"
+
+type RespTemplate {
+    Code int32 `json:"code"`
+    Msg string `json:"msg"`
+    Data interface{} `json:"data"`
+}
+
+type CommonResp {
+    Code int32 `json:"code"`
+    Msg string `json:"msg"`
+}

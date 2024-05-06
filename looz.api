@@ -1,0 +1,51 @@
+syntax = "v1"
+
+info(
+	title: "rest api combined file"
+	desc: "use this file to combine multiple api files into one"
+	author: "frogio"
+	email: "tianz8701@gmail.com"
+	version: "v1"
+)
+
+import "api/common.api"
+
+type (
+	PingReq {
+		Name string `path:"name"`
+	}
+	PingData {
+		Name string `json:"name"`
+	}
+	PingResp {
+		CommonResp
+		Data PingData `json:"data"`
+	}
+)
+
+type (
+	AuthReq {
+		Username string `json:"username"`
+	}
+	AuthData {
+		Token string `json:"token"`
+	}
+	AuthResp {
+		CommonResp
+		Data AuthData `json:"data"`
+	}
+)
+
+@server (
+	prefix: /v1/api/svc1
+	group: svc1
+)
+service looz-api {
+	@doc "ping req"
+	@handler PingHandler
+	get /ping/:name (PingReq) returns (PingResp)
+
+	@doc "auth req"
+	@handler AuthHandler
+	post /auth (AuthReq) returns (AuthResp)
+}
