@@ -1,11 +1,11 @@
 syntax = "v1"
 
-type RespTemplate {
-    Code int32 `json:"code"`
-    Msg string `json:"msg"`
-    Data interface{} `json:"data"`
-}
-
+// 一般来说，每个restful返回都带上这样一个结构
+// 所以一个符合预期的返回结构应该是这样的：
+// type Resp struct {
+//   CommonResp
+//   Data interface{} `json:"data"`   
+// }
 type CommonResp {
     Code int32 `json:"code"`
     Msg string `json:"msg"`

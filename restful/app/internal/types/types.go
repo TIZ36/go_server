@@ -27,12 +27,6 @@ type AuthResp struct {
 	Data AuthData `json:"data"`
 }
 
-type RespTemplate struct {
-	Code int32       `json:"code"`
-	Msg  string      `json:"msg"`
-	Data interface{} `json:"data"`
-}
-
 type CommonResp struct {
 	Code int32  `json:"code"`
 	Msg  string `json:"msg"`

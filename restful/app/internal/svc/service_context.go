@@ -1,7 +1,7 @@
 package svc
 
 import (
-	"looz/internal/config"
+	"app/internal/config"
 )
 
 type ServiceContext struct {

@@ -4,15 +4,15 @@ import (
 	"flag"
 	"fmt"
 
-	"looz/internal/config"
-	"looz/internal/handler"
-	"looz/internal/svc"
+	"app/internal/config"
+	"app/internal/handler"
+	"app/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
 )
 
-var configFile = flag.String("f", "etc/looz-api.yaml", "the config file")
+var configFile = flag.String("f", "etc/app.yaml", "the config file")
 
 func main() {
 	flag.Parse()

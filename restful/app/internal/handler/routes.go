@@ -4,8 +4,8 @@ package handler
 import (
 	"net/http"
 
-	svc1 "looz/internal/handler/svc1"
-	"looz/internal/svc"
+	svc1 "app/internal/handler/svc1"
+	"app/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
 )

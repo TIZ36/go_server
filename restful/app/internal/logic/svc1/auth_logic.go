@@ -3,27 +3,27 @@ package svc1
 import (
 	"context"
 
-	"looz/internal/svc"
-	"looz/internal/types"
+	"app/internal/svc"
+	"app/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type PingLogic struct {
+type AuthLogic struct {
 	logx.Logger
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 }
 
-func NewPingLogic(ctx context.Context, svcCtx *svc.ServiceContext) *PingLogic {
-	return &PingLogic{
+func NewAuthLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AuthLogic {
+	return &AuthLogic{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
 		svcCtx: svcCtx,
 	}
 }
 
-func (l *PingLogic) Ping(req *types.PingReq) (resp *types.PingResp, err error) {
+func (l *AuthLogic) Auth(req *types.AuthReq) (resp *types.AuthResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return

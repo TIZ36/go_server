@@ -3,8 +3,8 @@ syntax = "v1"
 info(
 	title: "rest api combined file"
 	desc: "use this file to combine multiple api files into one"
-	author: "frogio"
-	email: "tianz8701@gmail.com"
+	author: "boh"
+	email: "xxx@gmail.com"
 	version: "v1"
 )
 
@@ -38,13 +38,13 @@ type (
 
 @server (
 	prefix: /v1/api/svc1
-	group: svc1
+	group: svc1           // service 1
 )
-service looz-api {
+service app {
 	@doc "ping req"
 	@handler PingHandler
 	get /ping/:name (PingReq) returns (PingResp)
-
+	
 	@doc "auth req"
 	@handler AuthHandler
 	post /auth (AuthReq) returns (AuthResp)

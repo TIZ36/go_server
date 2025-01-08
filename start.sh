@@ -1,0 +1,1 @@
+cd scripts && ./rest.sh app
