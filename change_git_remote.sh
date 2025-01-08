@@ -29,11 +29,11 @@ echo -e "${BOLD}Current git remote: ${NC}"
 git remote -v
 
 # 远端如果是空分支，将本地的分支推送到远端
-read -p "Do you want to push the local branch to the remote branch? (y/n) " answer
+read -p "Do you want to push force the local branch to the remote branch? (y/n) " answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-    # 推送本地分支到远端
-    git push -u origin main
-    echo -e "${OKTAG} Push the local branch to the remote branch"
+    # 强制推送本地分支到远端
+    git push origin main --force
+    echo -e "${OKTAG} Force push local branch to remote branch"
 else
-    echo -e "${OKTAG} Skip pushing the local branch to the remote branch"
+    echo -e "${OKTAG} Keep the remote branch"
 fi
